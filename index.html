@@ -1,30 +1,294 @@
-<!-- EVENT COUNTDOWN -->
-<section id="countdown-section">
-  <h2 style="text-align:center;">Next Robotics Event Starts In:</h2>
-  <div id="countdown" style="text-align:center; font-size:2rem; margin-top:1rem;"></div>
-</section>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" type="image/png" href="favicon.png">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- ANIMATED COUNTERS -->
-<section id="stats" style="background:#002b5c; color:white; text-align:center; padding:3rem 10%;">
-  <h2 style="color:white;">Our Impact</h2>
-  <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:40px; margin-top:2rem;">
-    <div>
-      <h1 class="counter" data-target="500">0</h1>
-      <p>Students Trained</p>
-    </div>
-    <div>
-      <h1 class="counter" data-target="50">0</h1>
-      <p>Workshops Conducted</p>
-    </div>
-    <div>
-      <h1 class="counter" data-target="20">0</h1>
-      <p>Competitions Organized</p>
-    </div>
+<title>AURA Robotics | Where Art Meets Automation</title>
+
+<!-- SEO -->
+<meta name="description" content="AURA Robotics - Robotics training, Arduino workshops, IoT projects, STEM education & automation innovation programs in Nepal.">
+<meta name="keywords" content="AURA Robotics, Robotics Nepal, Arduino Training, IoT Projects, STEM Education">
+<meta name="author" content="AURA Robotics">
+<link rel="canonical" href="https://weaurarobotics.com" />
+
+<!-- Open Graph (Facebook Sharing) -->
+<meta property="og:title" content="AURA Robotics | Where Art Meets Automation">
+<meta property="og:description" content="Join AURA Robotics for hands-on robotics workshops and innovation programs.">
+<meta property="og:image" content="https://weaurarobotics.com/logo.png">
+<meta property="og:url" content="https://weaurarobotics.com">
+<meta property="og:type" content="website">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f7f9fc;
+  color: #222;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,43,92,0.8), rgba(0,43,92,0.8)),
+              url('workshop.jpg') center/cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero a {
+  background: #00bfff;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero a:hover {
+  background: #008ecc;
+}
+
+/* NAVIGATION */
+nav {
+  background: #002b5c;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #004080;
+}
+
+/* SECTIONS */
+section {
+  padding: 4rem 10%;
+}
+
+h2 {
+  color: #002b5c;
+  margin-bottom: 1rem;
+  border-left: 5px solid #00bfff;
+  padding-left: 10px;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+}
+
+/* TESTIMONIALS */
+.testimonial {
+  background: #002b5c;
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* CONTACT */
+.contact-info {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contact-info a {
+  display: inline-block;
+  margin: 0.5rem 1rem;
+  color: #004080;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-info a:hover {
+  color: #00bfff;
+}
+
+.map iframe {
+  width: 100%;
+  height: 350px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: auto;
+}
+
+input, textarea, button {
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background: #002b5c;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0059b3;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #002b5c;
+  color: white;
+}
+
+@media(max-width:768px){
+  .hero h1 { font-size: 2rem; }
+  section { padding: 3rem 5%; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>AURA Robotics</h1>
+  <p>Where Art Meets Automation 🤖✨</p>
+  <a href="#contact">Join Our Program</a>
+</div>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#programs">Programs</a>
+  <a href="#projects">Projects</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+  <div class="card">
+    <h2>About Us</h2>
+    <p>AURA Robotics empowers students through robotics, Arduino, IoT and automation innovation programs in Nepal.</p>
   </div>
 </section>
 
-<!-- DARK MODE TOGGLE BUTTON -->
-<button onclick="toggleDarkMode()" 
-style="position:fixed; top:20px; right:20px; padding:10px 15px; border:none; border-radius:20px; background:#00bfff; color:white; cursor:pointer;">
-🌙 Dark Mode
-</button>
+<section id="programs">
+  <div class="card">
+    <h2>Programs</h2>
+    <ul>
+      <li>Robotics Workshops & Competitions</li>
+      <li>Advanced Robo Soccer & Robo War</li>
+      <li>Innovation & Prototype Exhibition</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="card">
+    <h2>Sample Projects</h2>
+    <ul>
+      <li>Path Following Robot</li>
+      <li>Bluetooth Controlled Car</li>
+      <li>Smart Automation Systems</li>
+      <li>Fire Detection & IoT Projects</li>
+    </ul>
+  </div>
+</section>
+
+<section id="testimonials">
+  <h2>What Students Say</h2>
+  <div class="testimonial">
+    "AURA Robotics made learning technology fun and practical!" – Student
+  </div>
+  <div class="testimonial">
+    "The best robotics workshop experience in Nepal." – Parent
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+
+  <div class="map">
+    <iframe src="https://www.google.com/maps?q=27.676619,85.426901&hl=en&z=16&output=embed"></iframe>
+  </div>
+
+  <div class="contact-info">
+    <a href="tel:9767234053"><i class="fa-solid fa-phone"></i> 9767234053</a>
+    <a href="tel:015927443"><i class="fa-solid fa-phone-volume"></i> 01-5927443</a>
+    <a href="https://wa.me/9767234053" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <a href="mailto:weaurarobotics@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    <a href="https://fb.com/weaurarobotics" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+    <a href="https://instagram.com/weaurarobotics" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+  </div>
+
+  <form action="send_mail.php" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="Your Number" required>
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<a href="https://wa.me/9767234053" class="whatsapp-float" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<footer>
+  © 2025 AURA Robotics | Designed with Innovation 🚀
+</footer>
+
+</body>
+</html>
